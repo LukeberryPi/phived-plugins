@@ -10,10 +10,14 @@ short skill that tells the agent when and how to use it. The first time the
 agent calls phived, you approve access in your browser. Agents need
 [phived PRO](https://phived.com/app?checkout=monthly).
 
+[phived.com/connect](https://phived.com/connect) has a one-click install or a
+command for each app, and [phived.com/llms.txt](https://phived.com/llms.txt)
+tells an agent how to connect and what each tool does.
+
 ## Cursor
 
-Open phived → Settings → Agents and click **Add to Cursor**, then sign in
-when Cursor asks.
+Click **Add to Cursor** on [phived.com/connect](https://phived.com/connect),
+then sign in when Cursor asks.
 
 Teams can import this repository as a team marketplace (Dashboard → Plugins &
 MCPs → Add Marketplace → Import from Repo) to install the plugin with its
@@ -46,7 +50,8 @@ the server and signs you in.
 
 - Claude on the web, desktop, and mobile:
   [add phived as a connector](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=phived&connectorUrl=https%3A%2F%2Fphived.com%2Fmcp).
-- VS Code:
+- VS Code: click **Add to VS Code** on
+  [phived.com/connect](https://phived.com/connect), or run
   `code --add-mcp '{"name":"phived","type":"http","url":"https://phived.com/mcp"}'`.
 - Anything else: add `https://phived.com/mcp` as a custom connector or
   remote MCP server.
@@ -65,9 +70,9 @@ Agents that run shell commands can use phived with no setup beyond a sign-in.
 Every MCP tool is a command:
 
 ```sh
-npx phived login
-npx phived create-list groceries milk eggs
-npx phived read-canvas --json
+npx -y phived@1 login
+npx -y phived@1 create-list groceries milk eggs
+npx -y phived@1 read-canvas --json
 ```
 
 ## Your data
