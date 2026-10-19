@@ -24,3 +24,7 @@ jobs:
           ajv="npx -y -p ajv-cli@5 -p ajv-formats@3 ajv validate --spec=draft7 -c ajv-formats"
           $ajv -s marketplace.schema.json -d .cursor-plugin/marketplace.json
           $ajv -s plugin.schema.json -d plugins/phived/.cursor-plugin/plugin.json
+      - name: MCP Registry entry
+        run: |
+          curl -fsSL "$(jq -r '."$schema"' server.json)" -o server.schema.json
+          npx -y -p ajv-cli@5 -p ajv-formats@3 ajv validate --spec=draft7 -c ajv-formats --strict=false -s server.schema.json -d server.json
