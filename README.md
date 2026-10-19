@@ -28,12 +28,16 @@ skill. To try it alone, copy `plugins/phived` to
 
 ```sh
 claude plugin install phived --marketplace LukeberryPi/phived-plugins
+claude mcp login plugin:phived:phived
 ```
 
-Then run `/mcp` in Claude Code, pick `plugin:phived:phived`, and sign in.
-Without the plugin,
-`claude mcp add --transport http --scope user phived https://phived.com/mcp`
-adds the server alone.
+The second command signs you in; `/mcp` inside Claude Code does the same, on
+any version. Without the plugin, add the server alone:
+
+```sh
+claude mcp add --transport http --scope user phived https://phived.com/mcp
+claude mcp login phived
+```
 
 ## Codex
 
