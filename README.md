@@ -31,8 +31,8 @@ claude plugin install phived --marketplace LukeberryPi/phived-plugins
 claude mcp login plugin:phived:phived
 ```
 
-The second command opens your browser to sign in; `/mcp` inside Claude Code
-does the same. Without the plugin, add the server alone:
+The second command signs you in; `/mcp` inside Claude Code does the same, on
+any version. Without the plugin, add the server alone:
 
 ```sh
 claude mcp add --transport http --scope user phived https://phived.com/mcp
