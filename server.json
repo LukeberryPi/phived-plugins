@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.LukeberryPi/phived",
+  "title": "phived",
+  "description": "Read and change your phived to-do lists: add tasks, check them off, and move them around.",
+  "repository": {
+    "url": "https://github.com/LukeberryPi/phived",
+    "source": "github"
+  },
+  "websiteUrl": "https://phived.com/connect",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://phived.com/mcp"
+    }
+  ]
+}

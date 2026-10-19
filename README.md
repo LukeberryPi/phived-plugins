@@ -53,6 +53,12 @@ the server and signs you in.
 
 Each app asks you to sign in to phived and allow access.
 
+## MCP Registry
+
+`server.json` lists the hosted server in the
+[MCP Registry](https://registry.modelcontextprotocol.io) as
+`io.github.LukeberryPi/phived`.
+
 ## The phived CLI
 
 Agents that run shell commands can use phived with no setup beyond a sign-in.
