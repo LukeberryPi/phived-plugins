@@ -12,37 +12,46 @@ agent calls phived, you approve access in your browser. Agents need
 
 ## Cursor
 
-Open phived → Settings → Agents and click **Add to Cursor**, or install the
-plugin from Cursor's chat:
+Open phived → Settings → Agents and click **Add to Cursor**, then sign in
+when Cursor asks.
 
-```text
-/add-plugin phived@https://github.com/LukeberryPi/phived-plugins
-```
+Teams can import this repository as a team marketplace (Dashboard → Plugins &
+MCPs → Add Marketplace → Import from Repo) to install the plugin with its
+skill. To try it alone, copy `plugins/phived` to
+`~/.cursor/plugins/local/phived` and reload Cursor.
 
 ## Claude Code
 
 ```sh
-claude plugin marketplace add LukeberryPi/phived-plugins
-claude plugin install phived@phived
+claude plugin install phived --marketplace LukeberryPi/phived-plugins
 ```
 
-Then run `/mcp` in Claude Code, pick phived, and authenticate. Without the
-plugin, `claude mcp add --transport http --scope user phived https://phived.com/mcp`
+Then run `/mcp` in Claude Code, pick `plugin:phived:phived`, and sign in.
+Without the plugin,
+`claude mcp add --transport http --scope user phived https://phived.com/mcp`
 adds the server alone.
 
 ## Codex
 
 ```sh
 codex plugin marketplace add LukeberryPi/phived-plugins
+codex plugin add phived@phived
+codex mcp login phived
 ```
 
-Then install phived from `/plugins`. Without the plugin,
-`codex mcp add phived --url https://phived.com/mcp` adds the server alone.
+Without the plugin, `codex mcp add phived --url https://phived.com/mcp` adds
+the server and signs you in.
 
-## Claude, ChatGPT, VS Code, and other apps
+## Claude, VS Code, and other apps
 
-Add `https://phived.com/mcp` as a custom connector or remote MCP server. The
-app asks you to sign in to phived and allow access.
+- Claude on the web, desktop, and mobile:
+  [add phived as a connector](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=phived&connectorUrl=https%3A%2F%2Fphived.com%2Fmcp).
+- VS Code:
+  `code --add-mcp '{"name":"phived","type":"http","url":"https://phived.com/mcp"}'`.
+- Anything else: add `https://phived.com/mcp` as a custom connector or
+  remote MCP server.
+
+Each app asks you to sign in to phived and allow access.
 
 ## The phived CLI
 
