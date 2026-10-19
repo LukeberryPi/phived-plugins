@@ -1,7 +1,7 @@
 {
   "name": "phived",
   "displayName": "phived",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Your phived canvas in your agent: read your lists, add tasks, check them off, and move them around.",
   "author": {
     "name": "phived",

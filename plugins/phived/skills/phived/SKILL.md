@@ -31,14 +31,15 @@ user's canvas as it lands.
 ## Without MCP: the phived CLI
 
 Every tool is also a command, named like the tool in kebab case, with the
-same arguments and results:
+same arguments and results. Keep the `@1`: older versions are a placeholder
+that exits 0 without doing anything.
 
 ```sh
-npx phived login                          # once, in the browser
-npx phived create-list groceries milk eggs
-npx phived read-canvas --json
-npx phived tools --json                   # every command with its JSON Schema
+npx -y phived@1 login                     # once, in the browser
+npx -y phived@1 create-list groceries milk eggs
+npx -y phived@1 read-canvas --json
+npx -y phived@1 tools --json              # every command with its JSON Schema
 ```
 
 Exit codes: `0` done, `1` refused (stderr says why), `2` usage, `3` signed
-out (run `npx phived login`), `4` needs phived PRO, `5` rate limited.
+out (run `npx -y phived@1 login`), `4` needs phived PRO, `5` rate limited.
