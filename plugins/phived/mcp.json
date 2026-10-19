@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "phived": {
+      "type": "http",
+      "url": "https://phived.com/mcp",
+      "auth": {
+        "CLIENT_ID": "cursor"
+      }
+    }
+  }
+}

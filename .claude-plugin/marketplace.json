@@ -1,0 +1,15 @@
+{
+  "name": "phived",
+  "owner": {
+    "name": "phived"
+  },
+  "description": "phived for Claude Code and Codex.",
+  "plugins": [
+    {
+      "name": "phived",
+      "source": "./plugins/phived",
+      "description": "Your phived canvas in your agent: read your lists, add tasks, check them off, and move them around.",
+      "category": "productivity"
+    }
+  ]
+}

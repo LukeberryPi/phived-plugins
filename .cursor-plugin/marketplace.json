@@ -1,0 +1,16 @@
+{
+  "name": "phived",
+  "owner": {
+    "name": "phived"
+  },
+  "metadata": {
+    "description": "phived for Cursor."
+  },
+  "plugins": [
+    {
+      "name": "phived",
+      "source": "plugins/phived",
+      "description": "Your phived canvas in Cursor: read your lists, add tasks, check them off, and move them around."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Claude Code and Codex manifests
+        run: |
+          npx -y @anthropic-ai/claude-code plugin validate --strict .
+          npx -y @anthropic-ai/claude-code plugin validate --strict plugins/phived
+      - name: Cursor manifests
+        run: |
+          base=https://raw.githubusercontent.com/cursor/plugins/main/schemas
+          curl -fsSLO "$base/plugin.schema.json"
+          curl -fsSLO "$base/marketplace.schema.json"
+          ajv="npx -y -p ajv-cli@5 -p ajv-formats@3 ajv validate --spec=draft7 -c ajv-formats"
+          $ajv -s marketplace.schema.json -d .cursor-plugin/marketplace.json
+          $ajv -s plugin.schema.json -d plugins/phived/.cursor-plugin/plugin.json

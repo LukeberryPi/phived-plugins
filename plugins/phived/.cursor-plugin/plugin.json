@@ -1,0 +1,18 @@
+{
+  "name": "phived",
+  "displayName": "phived",
+  "version": "1.0.0",
+  "description": "Your phived canvas in Cursor: read your lists, add tasks, check them off, and move them around.",
+  "author": {
+    "name": "phived"
+  },
+  "homepage": "https://phived.com",
+  "repository": "https://github.com/LukeberryPi/phived-plugins",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": ["phived", "todo", "tasks", "lists", "productivity", "mcp"],
+  "category": "productivity",
+  "tags": ["mcp", "todo", "tasks"],
+  "mcpServers": "./mcp.json",
+  "skills": "./skills/"
+}
